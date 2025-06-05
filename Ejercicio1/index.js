@@ -26,3 +26,34 @@ async function fetchAllCharacters() {
     return [];
   }
 }
+/**
+ * 5. Rellenar el <select> con person.id como value y person.fullName como texto
+ */
+function populateSelect(characters) {
+    selectElement.innerHTML = '<option value="">— Elige un personaje —</option>';
+    characters.forEach(person => {
+      const option = document.createElement('option');
+      option.value = person.id;            
+      option.textContent = person.fullName;
+      selectElement.appendChild(option);
+    });
+  }
+  
+  /**
+   * 6. Mostrar en pantalla la imagen y datos del personaje seleccionado
+   */
+  function showCharacterInfo(selected) {
+    if (!selected) {
+      imageElement.src = '';
+      imageElement.alt = '';
+      nameSpan.textContent   = '';
+      titleSpan.textContent  = '';
+      familySpan.textContent = '';
+      return;
+    }
+    imageElement.src = selected.imageUrl;
+    imageElement.alt = 'Foto de ' + selected.fullName;
+    nameSpan.textContent   = selected.fullName;
+    titleSpan.textContent  = selected.title;
+    familySpan.textContent = selected.family;
+  }
