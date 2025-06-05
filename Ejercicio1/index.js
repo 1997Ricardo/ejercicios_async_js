@@ -57,3 +57,39 @@ function populateSelect(characters) {
     titleSpan.textContent  = selected.title;
     familySpan.textContent = selected.family;
   }
+  /**
+ * 7. Manejar el cambio en el <select>
+ */
+function handleSelectChange() {
+    const selectedId = Number(selectElement.value);
+    console.log('value del select:', selectElement.value, '→ como número:', selectedId);
+  
+    if (!selectedId) {
+      showCharacterInfo(null);
+      return;
+    }
+    const personaje = characters.find(p => p.id === selectedId);
+    console.log('Objeto encontrado:', personaje);
+    showCharacterInfo(personaje);
+  }
+  
+  /**
+   * 8. Alternar tema claro/oscuro
+   */
+  function toggleTheme() {
+    bodyElement.classList.toggle('dark');
+  }
+  
+  /**
+   * 9. Función principal: carga datos, rellena select y añade listeners
+   */
+  async function init() {
+    characters = await fetchAllCharacters();
+    populateSelect(characters);
+  
+    selectElement.addEventListener('change', handleSelectChange);
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+  
+  // Llamamos a init cuando la página carga
+  init();
