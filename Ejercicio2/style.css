@@ -1,0 +1,148 @@
+/* ==== ESTILOS GENERALES ==== */
+/* Aplicamos un fondo suave y fuente legible */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Contenedor centrado con fondo blanco y sombra */
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título principal */
+  h1 {
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+    color: #2c3e50;
+  }
+  
+  /* Párrafos de texto */
+  p {
+    margin-bottom: 12px;
+    color: #555;
+  }
+  
+  /* ==== BOTONES ==== */
+  /* Estilo base para ambos botones */
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 6px 0; /* Un pequeño margen vertical */
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  /* Hover para botón */
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Tema oscuro: cambiamos color de fondo y texto de los botones */
+  body.dark button {
+    background-color: #f39c12;
+    color: #2c3e50;
+  }
+  
+  body.dark button:hover {
+    background-color: #d35400;
+  }
+  
+  /* ==== CONTENEDOR DE IMAGEN ==== */
+  #image-container {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 20px auto; /* Espacio arriba y abajo */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background-color: #fcfcfc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  body.dark #image-container {
+    background-color: #4a5a6a;
+    border-color: #555;
+  }
+  
+  /* Ajustar la imagen para que ocupe todo el contenedor manteniendo proporción */
+  #character-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* ==== INFORMACIÓN DE TEXTO ==== */
+  #info-container p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  #info-container span {
+    color: inherit; /* Hereda el color del párrafo o del contenedor */
+  }
+  
+  /* ==== MODO OSCURO ==== */
+  body.dark {
+    background-color: #2c3e50;
+    color: #ecf0f1; /* Color por defecto para texto */
+  }
+  
+  body.dark .container {
+    background-color: #3b4a59;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #555;
+  }
+  
+  body.dark .container h1 {
+    color: #ecf0f1;
+  }
+  
+  body.dark .container p {
+    color: #ddd;
+  }
+  
+  body.dark #info-container p {
+    color: #ddd;
+  }
+  body.dark #info-container span {
+    color: #ecf0f1;
+  }
+  
+  /* ==== RESPONSIVIDAD BÁSICA ==== */
+  @media (max-width: 480px) {
+    .container {
+      padding: 12px;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    button {
+      max-width: 100%;
+    }
+    #image-container {
+      max-width: 90%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+    }
+  }
+  

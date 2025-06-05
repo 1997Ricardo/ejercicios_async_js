@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokémon Aleatorio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Pokémon Aleatorio (1–151)</h1>
+
+    <!-- Botón para cambiar entre tema claro/oscuro -->
+    <button id="theme-toggle">Cambiar Tema</button>
+
+    <!-- Botón para obtener otro Pokémon sin recargar -->
+    <button id="new-pokemon-btn">Mostrar otro Pokémon</button>
+
+    <!-- Contenedor de la imagen del Pokémon -->
+    <div id="image-container">
+      <img class="random-image" id="character-image" src="" alt="Imagen de Pokémon" />
+    </div>
+
+    <!-- Información: nombre, tipo y habilidad -->
+    <div id="info-container">
+      <p id="name"><strong>Nombre:</strong> <span></span></p>
+      <p id="type"><strong>Tipo:</strong> <span></span></p>
+      <p id="ability"><strong>Habilidad:</strong> <span></span></p>
+    </div>
+  </div>
+</body>
+</html>
