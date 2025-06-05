@@ -9,3 +9,20 @@ const titleSpan       = document.querySelector('#title span');
 const familySpan      = document.querySelector('#family span');
 const themeToggleBtn  = document.getElementById('theme-toggle');
 const bodyElement     = document.body;
+// 3. Array donde guardaremos los personajes
+let characters = [];
+
+/**
+ * 4. Función que pide a la API y devuelve un array con personajes
+ */
+async function fetchAllCharacters() {
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    console.log('Personajes recibidos:', data.map(p => p.fullName));
+    return data;
+  } catch (error) {
+    console.error('Error al cargar personajes:', error);
+    return [];
+  }
+}
